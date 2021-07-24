@@ -32,10 +32,12 @@
       {% else %}
         {{ post.authors }}. ({{ post.date | default: "1900-01-01" | date: "%Y" }}) <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>,
       {% endif %}
-      {% if post.venue%}
+      {% if post.status == "published"%}
         <i>{{ post.venue }}</i> {{ post.volume }} ({{ post.number }}), {{ post.page }}.
       {% elsif post.status == "submitted"%}
-        <i>submitted</i>.
+        Accepted to present at <i>{{ post.venue }}</i>.
+      {% elsif post.status == "accepted"%}
+        submitted.
       {% elsif post.status == "arxiv-preprint"%}
         {{ post.paperurl }}.
     {% endif %}
