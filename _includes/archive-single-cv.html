@@ -34,9 +34,9 @@
       {% endif %}
       {% if post.status == "published"%}
         <i>{{ post.venue }}</i> {{ post.volume }} ({{ post.number }}), {{ post.page }}.
-      {% elsif post.status == "submitted"%}
-        Accepted to present at <i>{{ post.venue }}</i>.
       {% elsif post.status == "accepted"%}
+        Accepted to present at <i>{{ post.venue }}</i>.
+      {% elsif post.status == "submitted"%}
         submitted.
       {% elsif post.status == "arxiv-preprint"%}
         {{ post.paperurl }}.
