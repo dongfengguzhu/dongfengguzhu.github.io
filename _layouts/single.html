@@ -50,7 +50,9 @@ layout: default
                      
         {% if page.citation and page.paperurl and page.status == 'arxiv-preprint' %}
           <p>Citation: {{ page.citation }} </p>
-        {% elsif page.status == 'submitted' or 'accepted' %}
+        {% elsif page.status == 'submitted'%}
+          <p>To be updated.</p>
+        {% elsif page.status == 'accepted' %}
           <p>To be updated.</p>
         {% elsif page.citation and page.paperurl %}
           <p>Citation: {{ page.citation }} <a href="{{ page.paperurl }}"><u>{{ page.paperurl }}</u></a></p>
